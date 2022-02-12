@@ -1,1 +1,1 @@
-Simple javascript application for World game.
+Simple javascript application for Wordl game.
