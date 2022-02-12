@@ -15290,11 +15290,13 @@ const dictionary = [
     "shave"
   ];
 
-const offsetDate = new Date(2022,0,1)
-const msFromOffset = Date.now() - offsetDate;
-const daysFromOffset = msFromOffset / 1000 / 60 / 60 / 24;
-const targetWord = targetWords[Math.floor(daysFromOffset)];
-console.log(targetWord);
+// const offsetDate = new Date(2022,0,1)
+// const msFromOffset = Date.now() - offsetDate;
+// const daysFromOffset = msFromOffset / 1000 / 60 / 60 / 24;
+// const targetWord = targetWords[Math.floor(daysFromOffset)];
+
+const targetWord = targetWords[Math.floor(Math.random()*targetWords.length)];
+
 const WORD_LENGTH = 5;
 const guessGrid = document.querySelector('[data-guess-grid');
 const alertContainer = document.querySelector('[data-alert-container]');
@@ -15356,6 +15358,7 @@ function pressKey(key) {
 
 function deleteKey() {
     const activeTiles = getActiveTiles();
+    if(activeTiles.length === 0) return;
     const lastTile = activeTiles[activeTiles.length - 1];
 
     delete lastTile.dataset.state;
